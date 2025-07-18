@@ -1,5 +1,13 @@
+import Footer from "./components/footer/Footer";
+import Header from "./components/header/Header";
+
 function App() {
-  return <h1>Frontend develper capstone</h1>;
+  return (
+    <>
+      <Header />
+      <Footer />
+    </>
+  );
 }
 
 export default App;
