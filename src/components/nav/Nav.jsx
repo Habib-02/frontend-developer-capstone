@@ -1,24 +1,39 @@
+import { useState } from "react";
+import Styles from "./Nav.module.css";
+
 function Nav() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
-    <nav>
-      <ul>
+    <nav className={Styles["main-nav"]}>
+      <div className={Styles["hamburger-menu"]} onClick={toggleMenu}>
+        <div className={`${Styles["hamburger-line"]} ${isMenuOpen ? Styles.active : ""}`}></div>
+        <div className={`${Styles["hamburger-line"]} ${isMenuOpen ? Styles.active : ""}`}></div>
+        <div className={`${Styles["hamburger-line"]} ${isMenuOpen ? Styles.active : ""}`}></div>
+      </div>
+      
+      <ul className={`${Styles["nav-list"]} ${isMenuOpen ? Styles["nav-open"] : ""}`}>
         <li>
-          <a href="#">Home</a>
+          <a href="#" onClick={() => setIsMenuOpen(false)}>Home</a>
         </li>
         <li>
-          <a href="#">About</a>
+          <a href="#" onClick={() => setIsMenuOpen(false)}>About</a>
         </li>
         <li>
-          <a href="#">Menu</a>
+          <a href="#" onClick={() => setIsMenuOpen(false)}>Menu</a>
         </li>
         <li>
-          <a href="#">Reservation</a>
+          <a href="#" onClick={() => setIsMenuOpen(false)}>Reservation</a>
         </li>
         <li>
-          <a href="#">Order online</a>
+          <a href="#" onClick={() => setIsMenuOpen(false)}>Order online</a>
         </li>
         <li>
-          <a href="#">Login</a>
+          <a href="#" onClick={() => setIsMenuOpen(false)}>Login</a>
         </li>
       </ul>
     </nav>

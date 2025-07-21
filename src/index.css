@@ -1,0 +1,41 @@
+@font-face {
+  font-family: Karla;
+  src: url("/assets/fonts/Karla-VariableFont_wght.ttf");
+}
+
+@font-face {
+  font-family: "Markazi Text";
+  src: url("/assets/fonts/MarkaziText-VariableFont_wght.ttf");
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 50%;
+  font-family: "Karla";
+  height: 100%;
+}
+
+body {
+  font-size: 2rem;
+  height: 100%;
+}
+
+#root {
+  height: 100%;
+}
+
+nav ul {
+  list-style: none;
+}
+
+nav a {
+  color: #333;
+  text-decoration: none;
+}
