@@ -1,0 +1,83 @@
+.about {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 10rem 2rem;
+  margin-bottom: 10rem;
+
+  /* display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8rem; */
+  display: flex;
+  justify-content: space-between;
+  gap: 8rem;
+}
+
+.about h2 {
+  font-family: "Markazi Text";
+  font-size: 6rem;
+  font-weight: 600;
+}
+
+.about article {
+  flex-basis: 300px;
+}
+
+.about article > div {
+  margin-top: 7rem;
+}
+
+.about article p {
+  margin-top: 3rem;
+}
+
+.subheading {
+  font-family: "Markazi Text";
+  font-size: 4rem;
+  font-weight: 500;
+  line-height: 0.5;
+}
+
+.about img {
+  width: 200px;
+  height: 300px;
+  object-fit: cover;
+  border: 1px solid #333;
+}
+
+.about img:first-child {
+  position: relative;
+  top: 10rem;
+  left: 10rem;
+  z-index: -1;
+}
+
+@media screen and (max-width: 800px) {
+  .about {
+    gap: 0;
+    justify-content: flex-start;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .about {
+    flex-direction: column;
+    align-items: center;
+  }
+  .about article {
+    flex-basis: 0;
+    max-width: 300px;
+    margin-bottom: 10rem;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .about > div {
+    display: none;
+  }
+  .about {
+    margin-bottom: 0;
+  }
+  .about article {
+    margin-bottom: 0;
+  }
+}
