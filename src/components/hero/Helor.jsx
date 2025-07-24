@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styles from "./Hero.module.css";
 
 function Hero() {
@@ -13,7 +14,9 @@ function Hero() {
             delectus consequatur facilis et autem sed, nesciunt quas pariatur
             quibusdam eligendi aliquid.
           </p>
-          <button>Reserve a Table</button>
+          <button>
+            <Link to="/bookingpage">Reserve a Table</Link>
+          </button>
         </div>
         <div className={styles["image-block"]}>
           <img src="/assets/images/restaurantfood.jpg" alt="" />

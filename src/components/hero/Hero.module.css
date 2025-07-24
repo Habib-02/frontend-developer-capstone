@@ -60,6 +60,11 @@
   cursor: pointer;
 }
 
+.content-block button a {
+  color: #000;
+  text-decoration: none;
+}
+
 @media screen and (max-width: 600px) {
   .image-block {
     display: none;

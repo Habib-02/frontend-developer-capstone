@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Styles from "./Nav.module.css";
+import { Link } from "react-router-dom";
 
 function Nav() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -11,29 +12,57 @@ function Nav() {
   return (
     <nav className={Styles["main-nav"]}>
       <div className={Styles["hamburger-menu"]} onClick={toggleMenu}>
-        <div className={`${Styles["hamburger-line"]} ${isMenuOpen ? Styles.active : ""}`}></div>
-        <div className={`${Styles["hamburger-line"]} ${isMenuOpen ? Styles.active : ""}`}></div>
-        <div className={`${Styles["hamburger-line"]} ${isMenuOpen ? Styles.active : ""}`}></div>
+        <div
+          className={`${Styles["hamburger-line"]} ${
+            isMenuOpen ? Styles.active : ""
+          }`}
+        ></div>
+        <div
+          className={`${Styles["hamburger-line"]} ${
+            isMenuOpen ? Styles.active : ""
+          }`}
+        ></div>
+        <div
+          className={`${Styles["hamburger-line"]} ${
+            isMenuOpen ? Styles.active : ""
+          }`}
+        ></div>
       </div>
-      
-      <ul className={`${Styles["nav-list"]} ${isMenuOpen ? Styles["nav-open"] : ""}`}>
+
+      <ul
+        className={`${Styles["nav-list"]} ${
+          isMenuOpen ? Styles["nav-open"] : ""
+        }`}
+      >
         <li>
-          <a href="#" onClick={() => setIsMenuOpen(false)}>Home</a>
+          <a href="#" onClick={() => setIsMenuOpen(false)}>
+            Home
+          </a>
         </li>
         <li>
-          <a href="#" onClick={() => setIsMenuOpen(false)}>About</a>
+          <a href="#" onClick={() => setIsMenuOpen(false)}>
+            About
+          </a>
         </li>
         <li>
-          <a href="#" onClick={() => setIsMenuOpen(false)}>Menu</a>
+          <a href="#" onClick={() => setIsMenuOpen(false)}>
+            Menu
+          </a>
         </li>
         <li>
-          <a href="#" onClick={() => setIsMenuOpen(false)}>Reservation</a>
+          <Link to="/bookingpage" onClick={() => setIsMenuOpen(false)}>
+            Reservation
+          </Link>
         </li>
         <li>
-          <a href="#" onClick={() => setIsMenuOpen(false)}>Order online</a>
+          <a href="#" onClick={() => setIsMenuOpen(false)}>
+            Order online
+          </a>
         </li>
         <li>
-          <a href="#" onClick={() => setIsMenuOpen(false)}>Login</a>
+          <a href="#" onClick={() => setIsMenuOpen(false)}>
+            Login
+          </a>
         </li>
       </ul>
     </nav>
