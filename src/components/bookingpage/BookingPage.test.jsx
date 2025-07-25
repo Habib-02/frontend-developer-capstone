@@ -1,5 +1,15 @@
-import { describe, it, expect } from "vitest";
+import { describe, it, expect, beforeAll, afterAll } from "vitest";
 import { initializeTimes, updateTimes } from "./BookingPage.jsx";
+
+beforeAll(() => {
+  window.fetchAPI = () => [
+    "17:00", "18:00", "19:00", "20:00", "21:00", "22:00"
+  ];
+});
+
+afterAll(() => {
+  delete window.fetchAPI;
+});
 
 describe("initializeTimes", () => {
   it("should return the default available times", () => {

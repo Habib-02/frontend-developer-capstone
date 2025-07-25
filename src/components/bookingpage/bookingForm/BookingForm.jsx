@@ -27,6 +27,12 @@ function BookingForm({
   function handleSubmit(event) {
     event.preventDefault();
     if (!isFormValid) return;
+    // Save booking to localStorage
+    const newBooking = { date, time, guestNumber, occasion };
+    const stored = localStorage.getItem("bookings");
+    const bookings = stored ? JSON.parse(stored) : [];
+    bookings.push(newBooking);
+    localStorage.setItem("bookings", JSON.stringify(bookings));
     // Redirect to confirmation page with form data
     navigate("/booking-confirmation", {
       state: {

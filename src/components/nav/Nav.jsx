@@ -55,6 +55,11 @@ function Nav() {
           </Link>
         </li>
         <li>
+          <Link to="/bookings-table" onClick={() => setIsMenuOpen(false)}>
+            All Bookings
+          </Link>
+        </li>
+        <li>
           <a href="#" onClick={() => setIsMenuOpen(false)}>
             Order online
           </a>
