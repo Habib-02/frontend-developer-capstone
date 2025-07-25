@@ -22,6 +22,7 @@ function BookingsTable() {
         <table className={styles.table}>
           <thead>
             <tr>
+              <th>Name</th>
               <th>Date</th>
               <th>Time</th>
               <th>Guests</th>
@@ -31,10 +32,11 @@ function BookingsTable() {
           <tbody>
             {bookings.map((b, i) => (
               <tr key={i}>
-                <td>{b.date}</td>
-                <td>{b.time}</td>
-                <td>{b.guestNumber}</td>
-                <td>{b.occasion}</td>
+                <td data-label="Name">{b.name}</td>
+                <td data-label="Date">{b.date}</td>
+                <td data-label="Time">{b.time}</td>
+                <td data-label="Guests">{b.guestNumber}</td>
+                <td data-label="Occasion">{b.occasion}</td>
               </tr>
             ))}
           </tbody>

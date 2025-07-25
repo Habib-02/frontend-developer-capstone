@@ -30,6 +30,11 @@ function BookingConfirmation() {
     <div className={styles.confirmationWrapper}>
       <h2 className={styles.heading}>Booking Confirmed!</h2>
       <ul className={styles.detailsList}>
+        {data.name && (
+          <li>
+            <span>Name:</span> {data.name}
+          </li>
+        )}
         <li>
           <span>Date:</span> {data.date}
         </li>

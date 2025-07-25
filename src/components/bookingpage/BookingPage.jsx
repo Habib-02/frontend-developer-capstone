@@ -27,6 +27,7 @@ function getTodayString() {
 
 function BookingPage() {
   const todayStr = getTodayString();
+  const [name, setName] = useState("");
   const [date, setDate] = useState(todayStr);
   const [availableTimes, dispatch] = useReducer(
     updateTimes,
@@ -42,6 +43,10 @@ function BookingPage() {
   const [guestNumber, setGuestNumber] = useState("1");
   const [occasion, setOccasion] = useState("Birthday");
   const navigate = useNavigate();
+
+  function handleName(event) {
+    setName(event.target.value);
+  }
 
   function handleDate(event) {
     const newDate = event.target.value;
@@ -76,10 +81,12 @@ function BookingPage() {
         ← Back to Home
       </button>
       <BookingForm
+        name={name}
         date={date}
         time={time}
         guestNumber={guestNumber}
         occasion={occasion}
+        handleName={handleName}
         handleDate={handleDate}
         handleTime={handleTime}
         handleGuestNumber={handleGuestNumber}

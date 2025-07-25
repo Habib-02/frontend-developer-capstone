@@ -14,9 +14,9 @@ function Hero() {
             delectus consequatur facilis et autem sed, nesciunt quas pariatur
             quibusdam eligendi aliquid.
           </p>
-          <button>
-            <Link to="/bookingpage">Reserve a Table</Link>
-          </button>
+          <Link to="/bookingpage" className={styles.button}>
+            Reserve a Table
+          </Link>
         </div>
         <div className={styles["image-block"]}>
           <img src="/assets/images/restaurantfood.jpg" alt="" />

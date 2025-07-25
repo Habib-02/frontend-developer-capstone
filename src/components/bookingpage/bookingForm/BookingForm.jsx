@@ -16,12 +16,17 @@ export function isGuestNumberValid(guestNumber) {
 export function isOccasionValid(occasion) {
   return Boolean(occasion);
 }
+export function isNameValid(name) {
+  return Boolean(name && name.trim());
+}
 
 function BookingForm({
+  name,
   date,
   time,
   guestNumber,
   occasion,
+  handleName,
   handleDate,
   handleTime,
   handleGuestNumber,
@@ -38,12 +43,13 @@ function BookingForm({
   const maxDate = maxDateObj.toISOString().split("T")[0];
 
   // Validation logic
+  const _isNameValid = isNameValid(name);
   const _isDateValid = isDateValid(date, minDate, maxDate);
   const _isTimeValid = isTimeValid(time);
   const _isGuestNumberValid = isGuestNumberValid(guestNumber);
   const _isOccasionValid = isOccasionValid(occasion);
   const isFormValid =
-    _isDateValid && _isTimeValid && _isGuestNumberValid && _isOccasionValid;
+    _isNameValid && _isDateValid && _isTimeValid && _isGuestNumberValid && _isOccasionValid;
 
   // Error messages
   let guestError = "";
@@ -61,17 +67,32 @@ function BookingForm({
           e.preventDefault();
           if (!isFormValid) return;
           // Save booking to localStorage
-          const newBooking = { date, time, guestNumber, occasion };
+          const newBooking = { name, date, time, guestNumber, occasion };
           const stored = localStorage.getItem("bookings");
           const bookings = stored ? JSON.parse(stored) : [];
           bookings.push(newBooking);
           localStorage.setItem("bookings", JSON.stringify(bookings));
           // Redirect to confirmation page with form data
           navigate("/booking-confirmation", {
-            state: { date, time, guestNumber, occasion },
+            state: { name, date, time, guestNumber, occasion },
           });
         }}
       >
+        <label htmlFor="res-name">Name</label>
+        <input
+          type="text"
+          id="res-name"
+          value={name}
+          onChange={handleName}
+          required
+          placeholder="Your name"
+        />
+        {!_isNameValid && (
+          <span style={{ color: "red", fontSize: "0.95em" }}>
+            Please enter your name.
+          </span>
+        )}
+
         <label htmlFor="res-date">Choose date</label>
         <input
           type="date"

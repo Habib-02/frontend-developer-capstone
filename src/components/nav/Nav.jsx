@@ -36,11 +36,6 @@ function Nav() {
       >
         <li>
           <a href="#" onClick={() => setIsMenuOpen(false)}>
-            Home
-          </a>
-        </li>
-        <li>
-          <a href="#" onClick={() => setIsMenuOpen(false)}>
             About
           </a>
         </li>

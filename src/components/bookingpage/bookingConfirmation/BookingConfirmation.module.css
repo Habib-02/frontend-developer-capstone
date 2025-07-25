@@ -64,3 +64,29 @@
   width: 100%;
   align-items: center;
 }
+
+@media (max-width: 600px) {
+  .confirmationWrapper {
+    max-width: 100vw;
+    padding: 10px 2vw;
+    border-radius: 0;
+  }
+  .heading {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  .detailsList li {
+    font-size: 1.1rem;
+    padding: 6px 2px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .button {
+    font-size: 1.1rem;
+    padding: 8px 0;
+    width: 100%;
+  }
+  .buttonGroup {
+    gap: 8px;
+  }
+}
