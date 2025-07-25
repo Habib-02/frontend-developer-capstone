@@ -1,0 +1,33 @@
+.form-wrapper h2 {
+  margin-bottom: 5rem;
+}
+.form-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 6rem 2rem;
+}
+
+.form-wrapper input,
+.form-wrapper select {
+  font-size: 2rem;
+  padding: 1rem 2rem;
+  margin-bottom: 2rem;
+}
+
+.backButton {
+  background: #495e57;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.7rem 1.5rem;
+  font-size: 2rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin: 1rem 0 2rem 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+  transition: background 0.2s, color 0.2s;
+}
+
+.backButton:hover {
+  background: #344e41;
+}
